@@ -2,7 +2,6 @@
             git config --global user.email "adeilmazk@gmail.com"         
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
-            echo sync kernel source
             git clone https://github.com/Gabriel260/android_kernel_samsung_exynos7885 -b upstream kernel
             cd kernel
             git clone https://github.com/Gabriel260/Linaro-V6.5.0 toolchain
