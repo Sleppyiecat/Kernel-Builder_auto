@@ -4,6 +4,7 @@
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
             git clone https://github.com/Gabriel260/android_kernel_samsung_j1mini3g -b Nougat kernel
             cd kernel
+            mkdir out
             export ARCH=arm
             export KBUILD_BUILD_USER=Gabriel
             export KBUILD_BUILD_HOST=Ubuntu
