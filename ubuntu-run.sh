@@ -5,7 +5,7 @@
             git clone https://github.com/Gabriel260/android_kernel_samsung_j1mini3g -b Nougat kernel
             cd android_kernel_samsung_exynos7885
             mkdir out
-            VERSION=LightKernel_v7
+            VERSION=Yuuko kernel
             KERNEL_ZIP_NAME=${VERSION}_kernel_$(date +%F).zip
  	    if [ -d "out/arch/arm/boot/dts" ]; then
 		   rm out/arch/arm/boot/dts/*;
@@ -14,7 +14,7 @@
             export KBUILD_BUILD_USER=Yuuko
             export KBUILD_BUILD_HOST=Ubuntu
             export LOCALVERSION=-${VERSION}
-            export CROSS_COMPILE=$(pwd)/toolchain/bin/arm-eabi-
+            export CROSS_COMPILE=$(pwd)/Toolchains-for-Eureka/bin/arm-eabi-
             make O=out j1mini3g-OC_defconfig
             make O=out -j4
             make O=out dtbs
