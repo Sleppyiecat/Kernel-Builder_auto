@@ -5,15 +5,27 @@
             git clone https://github.com/Gabriel260/android_kernel_samsung_j1mini3g -b Nougat kernel
             cd kernel
             mkdir out
+            VERSION=LightKernel_v7
+            KERNEL_ZIP_NAME=${VERSION}_kernel_$(date +%F).zip
+ 	    if [ -d "out/arch/arm/boot/dts" ]; then
+		   rm out/arch/arm/boot/dts/*;
+	    fi;
             export ARCH=arm
             export KBUILD_BUILD_USER=Gabriel
             export KBUILD_BUILD_HOST=Ubuntu
-            export LOCALVERSION=-LightKernel_v7
+            export LOCALVERSION=-${VERSION}
             export CROSS_COMPILE=$(pwd)/toolchain/bin/arm-eabi-
             make O=out j1mini3g-OC_defconfig
             make O=out -j4
-            cd out/arch/arm/boot
+            make O=out dtbs
+	    ./scripts/mkdtimg.sh -i $(pwd)/arch/arm/boot/dts/ -o dt.img;
+            find $(pwd) -name "Image" -exec mv -f {} $(pwd)/kernel_zip/tools \;
+	    find $(pwd) -name "dt.img" -exec mv -f {} $(pwd)/kernel_zip/tools \;
+	    cp -f out/drivers/net/wireless/sc2331/sprdwl.ko $(pwd)/kernel_zip/tools;
+	    cd $(pwd)/kernel_zip;
+	    zip -r ${KERNEL_ZIP_NAME} ./;
+	    mv ${KERNEL_ZIP_NAME} ..
             curl -sL https://git.io/file-transfer | sh
-            ./transfer wet Image
+            ./transfer wet *.zip
             df -h
             sleep 60
