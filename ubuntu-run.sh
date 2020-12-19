@@ -2,9 +2,8 @@
             git config --global user.email "mruczek70@gmail.com"         
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
-            cd android_kernel_samsung_exynos7885
+            cd ~/work/Private_Kernel_SSH/Private_Kernel_SSH/android_kernel_samsung_exynos7885
             mkdir out
-            VERSION=Yuuko kernel
             KERNEL_ZIP_NAME=${VERSION}_kernel_$(date +%F).zip
  	    if [ -d "out/arch/arm/boot/dts" ]; then
 		   rm out/arch/arm/boot/dts/*;
