@@ -24,7 +24,8 @@
 	    cp -f out/drivers/net/wireless/sc2331/sprdwl.ko $(pwd)/kernel_zip/tools;
 	    cd $(pwd)/kernel_zip;
 	    zip -r ${KERNEL_ZIP_NAME} ./;
-	    mv ${KERNEL_ZIP_NAME} ..
+	    mv *.zip ..
+            cd ..
             curl -sL https://git.io/file-transfer | sh
             ./transfer wet *.zip
             df -h
