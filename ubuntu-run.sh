@@ -2,7 +2,6 @@
             git config --global user.email "mruczek70@gmail.com"         
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
-            git clone https://github.com/Gabriel260/android_kernel_samsung_j1mini3g -b Nougat kernel
             cd android_kernel_samsung_exynos7885
             mkdir out
             VERSION=Yuuko kernel
@@ -15,7 +14,7 @@
             export KBUILD_BUILD_HOST=Ubuntu
             export LOCALVERSION=-${VERSION}
             export CROSS_COMPILE=$(pwd)/Toolchains-for-Eureka/bin/arm-eabi-
-            make O=out j1mini3g-OC_defconfig
+            make O=out a10_new_defconfig
             make O=out -j4
             make O=out dtbs
 	    ./scripts/mkdtimg.sh -i $(pwd)/arch/arm/boot/dts/ -o dt.img;
