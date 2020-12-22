@@ -1,18 +1,18 @@
-            git config --global user.name "Gabriel260"
-            git config --global user.email "adeilmazk@gmail.com"         
+            git config --global user.name "Sleppyiecat"
+            git config --global user.email "mruczek70@gmail.com"         
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
-            git clone https://github.com/Gabriel260/android_kernel_samsung_exynos7885 -b upstream-clang kernel
-            cd kernel
+            git clone https://github.com/Sleppyiecat/android_kernel_samsung_exynos7885
+            cd android_kernel_samsung_exynos7885
             git clone https://github.com/Chatur27/Toolchains-for-Eureka -b proton_clang_12 toolchain
             export ARCH=arm64
             export ANDROID_MAJOR_VERSION=q
-            export KBUILD_BUILD_USER=Gabriel
+            export KBUILD_BUILD_USER=Yuuko
             export KBUILD_BUILD_HOST=Ubuntu
             export CROSS_COMPILE=$(pwd)/toolchain/bin/aarch64-linux-gnu-
             export CROSS_COMPILE_ARM32=$(pwd)/toolchain/bin/arm-linux-gnueabi-
 	
-            export LOCALVERSION=-devel
+            export LOCALVERSION=-Yuuko_幸福愛してるわ
 	    make O=out ARCH=arm64 ANDROID_MAJOR_VERSION=q a10_defconfig
 	    PATH="$(pwd)/toolchain/bin:$(pwd)/toolchain/bin:${PATH}" \
 	    make -j4 O=out \
