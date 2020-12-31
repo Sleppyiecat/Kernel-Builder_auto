@@ -12,7 +12,6 @@
             export CROSS_COMPILE=$(pwd)/toolchain/bin/aarch64-linux-gnu-
             export CROSS_COMPILE_ARM32=$(pwd)/toolchain/bin/arm-linux-gnueabi-
 	
-            export LOCALVERSION=-Yuuko_幸福愛してるわ
 	    make O=out ARCH=arm64 ANDROID_MAJOR_VERSION=q a10_new_defconfig
 	    PATH="$(pwd)/toolchain/bin:$(pwd)/toolchain/bin:${PATH}" \
 	    make -j4 O=out \
