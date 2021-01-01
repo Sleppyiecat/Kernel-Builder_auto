@@ -5,6 +5,18 @@
             git clone https://github.com/Sleppyiecat/android_kernel_samsung_exynos7885
             cd android_kernel_samsung_exynos7885
             git clone https://github.com/Chatur27/Toolchains-for-Eureka -b proton_clang_12 toolchain
+	    
+	    echo "_________________________________________________"
+	    echo "=               projectNULL_kernel              ="
+	    echo "=              Main Developer: Yuuko            ="
+	    echo "=             CO-Developer: chrissunil          ="
+	    echo "=                                               ="
+	    echo "=     Compiling kernel using Proton Clang 12    ="
+	    echo "=---------------------------------------------- ="
+	    echo "=     > ARM64 Toolchain exported                ="
+	    echo "=     > ARM32 Toolchain exported                ="
+	    echo -e "=_______________________________________________="
+	    
             export ARCH=arm64
             export ANDROID_MAJOR_VERSION=q
             export KBUILD_BUILD_USER=Yuuko
@@ -27,5 +39,9 @@
             curl -sL https://git.io/file-transfer | sh
             ./transfer wet Image
             ./transfer wet dtbo.img
-            df -h
+	    
+	    echo "_________________________________________________"
+            echo "=               build completed                 ="
+	    echo "================================================="
+            
             sleep 60
