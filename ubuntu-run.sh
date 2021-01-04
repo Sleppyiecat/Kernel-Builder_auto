@@ -4,7 +4,7 @@
             sudo -E apt-get -qq install bc build-essential zip libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl ccache bison aria2
             git clone https://github.com/Sleppyiecat/android_kernel_samsung_exynos7885
             cd android_kernel_samsung_exynos7885
-            git clone https://github.com/Chatur27/Toolchains-for-Eureka -b proton_clang_12 toolchain
+            git clone https://github.com/kdrag0n/proton-clang --depth=1 -b master toolchain
 	    
 	    echo "_________________________________________________"
 	    echo "=               projectNULL_kernel              ="
