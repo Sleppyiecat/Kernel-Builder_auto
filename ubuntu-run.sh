@@ -26,7 +26,7 @@
 	
 	    make O=out ARCH=arm64 ANDROID_MAJOR_VERSION=q a10_new_defconfig
 	    PATH="$(pwd)/toolchain/bin:$(pwd)/toolchain/bin:${PATH}" \
-	    make -j8 O=out \
+	    make -j4 O=out \
 	    ARCH=arm64 \
 	    ANDROID_MAJOR_VERSION=q \
 	    CC=clang \
