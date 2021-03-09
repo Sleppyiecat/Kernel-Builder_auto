@@ -26,7 +26,7 @@
 	    PATH="$(pwd)/toolchain/bin:$(pwd)/toolchain/bin:${PATH}" \
 	    make -j4 O=out \
 	    ARCH=arm64 \
-	    ANDROID_MAJOR_VERSION=q \
+	    ANDROID_MAJOR_VERSION=r \
 	    CC=clang \
 	    LD_LIBRARY_PATH="$(pwd)/toolchain/lib:$LD_LIBRARY_PATH" \
 	    CLANG_TRIPLE=aarch64-linux-gnu- \
